@@ -38,14 +38,14 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          jierka/obscreen:v${{ steps.version.outputs.VERSION }}
-          jierka/obscreen:latest
+          nabilch900/obscreen:v${{ steps.version.outputs.VERSION }}
+          nabilch900/obscreen:latest
         platforms: linux/amd64, linux/arm64/v8, linux/arm/v7
 
     - name: Create and push manifest
       uses: docker/metadata-action@v3
       with:
-        images: jierka/obscreen
+        images: nabilch900/obscreen
         tags: type=semver,pattern=v{{version}}
         flavor: |
           latest=true
